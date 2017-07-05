@@ -1,0 +1,25 @@
+.container {
+  margin-top: 100px;
+  padding: 25px;
+  background-color: lightblue;
+  border-radius: 50px;
+}
+
+.buttons-panel {
+  margin: 25px;
+  text-align: center;
+}
+
+#weather-info {
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+  margin: 20px;
+  font-size: 26px;
+  color: navy;
+  font-weight: bold;
+}
+
+#weather-info>div {
+  margin: 0 20px;
+}

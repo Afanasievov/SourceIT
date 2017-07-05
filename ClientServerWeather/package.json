@@ -1,0 +1,11 @@
+{
+  "name": "clientserverweather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "Oleksandr",
+  "license": "ISC"
+}
