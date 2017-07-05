@@ -2,3 +2,4 @@
 /.vscode
 /Lesson-*
 scratch.js
+**/package-lock.json
