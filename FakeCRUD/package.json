@@ -1,0 +1,21 @@
+{
+  "name": "fake-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Afanasiev",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "connect": "3.6.2",
+    "express": "4.15.3"
+  },
+  "devDependencies": {
+    "eslint": "4.1.1",
+    "eslint-config-airbnb-base": "11.2.0",
+    "eslint-plugin-import": "2.7.0"
+  }
+}
