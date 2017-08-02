@@ -19,3 +19,10 @@ Server receives POST request, read and parse body and headers of the request and
 
 #### 6. FakeCRUD
 An express server that performs fake CRUD operations (post, get, update, delete).
+
+#### 7. FsStdInOut
+Run:
+
+```$ node FsStdInOut/readFile.js < FsStdInOut/lorem ```
+
+Read data from file (lorem) and write it to the terminal output.
