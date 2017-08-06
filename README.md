@@ -1,6 +1,6 @@
 # SourceIT Node.js course
 
-## Home works:
+## Tasks:
 
 #### 1. ForecastAfterSecond
 By click on Get Weather button, wait 1 second, then make a request to a weather service and show conditions for Kharkov. May need cors to be enabled.
