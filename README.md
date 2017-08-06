@@ -47,4 +47,4 @@ Read data from file (lorem) and write it to the terminal output.
 
 #### 9. PromisifyFunctions
 
-Promisify setTimeout and readFile
+Promisify setTimeout and readFile.
