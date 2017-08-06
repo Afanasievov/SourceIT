@@ -26,3 +26,16 @@ Run:
 ```$ node FsStdInOut/readFile.js < FsStdInOut/lorem ```
 
 Read data from file (lorem) and write it to the terminal output.
+
+#### 8. FakeRequests
+1. Make a function (url, cb) thack does fake request and return response in cb.
+2. Run 3 requests. Show result of requests at the end of execution.
+  2.1. In parallel:
+    - using callbacks
+    - using promises
+  2.2. Serially:
+    - using callbacks
+    - using promises
+
+#### 9. PromisifyFunctions
+Promisify setTimeout and readFile
