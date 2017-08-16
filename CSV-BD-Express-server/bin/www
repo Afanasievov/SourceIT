@@ -1,10 +1,9 @@
 const http = require('http');
 const application = require('../app.js');
 const config = require('../config/server.config.js');
-const logger = requrie('../services/logger.service.js);
 
 const server = http.createServer(application);
 
 server.listen(config.port, config.host, () => {
-  logger.info(`Server is listening on ${config.host}:${config.port}`);
+  console.log(`Server is listening on ${config.host}:${config.port}`);
 });
