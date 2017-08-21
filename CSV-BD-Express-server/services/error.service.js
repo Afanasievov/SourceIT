@@ -12,7 +12,7 @@ module.exports = {
     next(error);
   },
   internal: (err, req, res, next) => {
-    logger.error(`${err} : ${codes.getStatusText(codes.INTERNAL_SERVER_ERROR)}.`);
+    logger.error(`${JSON.stringify(err)}`);
     const response = err.code ? err : {
       code: codes.INTERNAL_SERVER_ERROR,
       message: err.message,

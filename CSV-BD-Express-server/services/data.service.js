@@ -1,4 +1,6 @@
 require('./base/mongo.provider');
+const codes = require('http-status-codes');
+const messages = require('../constants/messages');
 
 class ModelProvider {
   constructor(model, options = {}) {
@@ -7,8 +9,26 @@ class ModelProvider {
   }
 
   create(model) {
-    return new this._model(model)
-      .save()
+    const searchingCriteria = {
+      IsActive: true,
+      Title: model.Title,
+      ReleaseYear: model.ReleaseYear,
+      Director: model.Director,
+    };
+
+    return this
+      .find(searchingCriteria)
+      .then((data) => {
+        if (data.length) {
+          return Promise.reject({
+            code: codes.BAD_REQUEST,
+            message: messages.modelDuplicated,
+          });
+        }
+
+        return true;
+      })
+      .then(() => new this._model(model).save())
       .then(data => data);
   }
 

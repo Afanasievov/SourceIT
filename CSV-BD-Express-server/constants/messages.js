@@ -1,3 +1,3 @@
-module.exprots = {
-  dbConfigAbsent: 'DB config is absent!',
+module.exports = {
+  modelDuplicated: 'Model is duplicated!',
 };

@@ -5,10 +5,6 @@ require('mongoose-schema-extend');
 const SchemaBase = require('./base/mongoose.model');
 
 const movieSchema = SchemaBase.extend({
-  Id: {
-    type: Number,
-    required: true,
-  },
   Title: {
     type: String,
     required: true,

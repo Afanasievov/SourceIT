@@ -11,30 +11,22 @@ class BaseRouter {
   }
 
   get(req, res) {
-    this.dataService.find()
-      .then((data) => {
-        res.json(data);
-      })
-      .catch((err) => {
-        res.json(err);
-      });
+    this.dataService
+      .find()
+      .then(data => res.json(data))
+      .catch(err => res.json(err));
   }
 
-  post(req, res) {
+  post(req, res, next) {
     this.dataService.create(req.body)
-      .then((data) => {
-        res.json(data);
-      })
-      .catch((err) => {
-        res.json(err);
-      });
+      .then(data => res.json(data))
+      .catch(err => next(err));
   }
 
   put(req, res) {
-    this.dataService.update(req.body)
-      .then((data) => {
-        res.json(data);
-      });
+    this.dataService
+      .update(req.body)
+      .then(data => res.json(data));
   }
 
   delete(req, res) {
