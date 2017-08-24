@@ -4,6 +4,6 @@ const config = require('../config/server.config.js');
 
 const server = http.createServer(application);
 
-server.listen(config.port, config.host, () => {
-  console.log(`Server is listening on ${config.host}:${config.port}`);
-});
+server.listen(config.port, config.host, () => 
+  console.log('Server is listening on %s:%s', config.host, config.port)
+);

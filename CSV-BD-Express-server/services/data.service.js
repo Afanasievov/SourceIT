@@ -9,15 +9,8 @@ class ModelProvider {
   }
 
   create(model) {
-    const searchingCriteria = {
-      IsActive: true,
-      Title: model.Title,
-      ReleaseYear: model.ReleaseYear,
-      Director: model.Director,
-    };
-
     return this
-      .find(searchingCriteria)
+      .find(this._options.searchingCriteria)
       .then((data) => {
         if (data.length) {
           return Promise.reject({
@@ -30,6 +23,12 @@ class ModelProvider {
       })
       .then(() => new this._model(model).save())
       .then(data => data);
+  }
+
+  bulkCreate(model) {
+    return this._model
+      .insertMany(model)
+      .then(data => ({ created: data.length }));
   }
 
   findById(id) {

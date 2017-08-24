@@ -2,5 +2,6 @@
 module.exports = {
   default: '/',
   byId: '/:id',
-  movies: '/movies',
+  movie: '/movie',
+  file: '/file',
 };
