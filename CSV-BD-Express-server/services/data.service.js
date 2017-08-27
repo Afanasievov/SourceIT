@@ -1,7 +1,8 @@
 require('./base/mongo.provider');
 const codes = require('http-status-codes');
 const messages = require('../constants/messages');
-
+const getSearchingCriteria = require('../services/get_searching_criteriia');
+const defaultValues = require('../constants/default_values');
 class ModelProvider {
   constructor(model, options = {}) {
     this._model = model;
@@ -9,8 +10,9 @@ class ModelProvider {
   }
 
   create(model) {
-    return this
-      .find(this._options.searchingCriteria)
+    return Promise.resolve()
+      .then(() => getSearchingCriteria(this._options, model))
+      .then((searchingCriteria) => this._model.find(searchingCriteria))
       .then((data) => {
         if (data.length) {
           return Promise.reject({
@@ -18,29 +20,42 @@ class ModelProvider {
             message: messages.modelDuplicated,
           });
         }
-
-        return true;
       })
       .then(() => new this._model(model).save())
-      .then(data => data);
+      .then((data) => data);
   }
 
   bulkCreate(model) {
     return this._model
       .insertMany(model)
-      .then(data => ({ created: data.length }));
+      .then((data) => ({ created: data.length }));
   }
 
   findById(id) {
     return this._model
       .findById(id)
-      .then(data => data);
+      .then((data) => data);
   }
 
-  find() {
-    const searchingCriteria = {
-      IsActive: true,
-    };
+  find(itemsPerPage = defaultValues.itemsPerPage, page = 0) {
+    const searchingCriteria = { IsActive: true };
+
+    const countQuery = this._model
+      .count()
+      .exec((count) => count);
+    const findQuery = this._model
+      .find(searchingCriteria)
+      .limit(+itemsPerPage)
+      .skip(+page * itemsPerPage)
+      .exec((data) => data);
+
+    return Promise.all([countQuery, findQuery])
+      .then(([count, data]) => ({ count, data }));
+  }
+
+  findAll() {
+    const searchingCriteria = { IsActive: true };
+
     return this._model
       .find(searchingCriteria)
       .exec();

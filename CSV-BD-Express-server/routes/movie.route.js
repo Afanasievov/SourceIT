@@ -5,9 +5,9 @@ const MovieModel = require('../models/movie.model');
 
 const searchingCriteria = {
   IsActive: true,
-  Title: MovieModel.Title,
-  ReleaseYear: MovieModel.ReleaseYear,
-  Director: MovieModel.Director,
+  Title: null,
+  ReleaseYear: null,
+  Director: null,
 };
 
 new BaseRouter(Router, new ModelProvider(MovieModel, searchingCriteria));

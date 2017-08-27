@@ -1,4 +1,5 @@
 const routes = require('../../constants/routes');
+const arrToCsv = require('../../services/arr_to_csv');
 
 class FileRouter {
   constructor(router, dataService) {
@@ -10,8 +11,9 @@ class FileRouter {
 
   get(req, res) {
     this.dataService
-      .find()
-      .then(data => res.json(data))
+      .findAll()
+      .then(data => arrToCsv(data))
+      .then(data => res.send(data))
       .catch(err => res.json(err));
   }
 
