@@ -48,3 +48,8 @@ Read data from file (lorem) and write it to the terminal output.
 #### 9. PromisifyFunctions
 
 Promisify setTimeout and readFile.
+
+#### 10. CSV-BD-Express-server
+
+Server provide CRUD operations with model.
+Moreover it handle data from csv-file and format db return in csv format.
