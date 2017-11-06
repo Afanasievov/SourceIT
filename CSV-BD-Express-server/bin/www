@@ -4,6 +4,18 @@ const config = require('../config/server.config.js');
 
 const server = http.createServer(application);
 
+server.on('error', (err) => {
+  console.error(`Logging: ${err}`); // Logging
+  console.error(`Tracking: ${err}`); // Tracking
+  process.exit(1);
+});
+
+process.on('uncaughtException', (err) => {
+  console.error(`Logging: ${err}`); // Logging
+  console.error(`Tracking: ${err}`); // Tracking
+  process.exit(1);
+});
+
 server.listen(config.port, config.host, () => 
   console.log('Server is listening on %s:%s', config.host, config.port)
 );
