@@ -1,0 +1,11 @@
+{
+  "name": "lesson-6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app-4.js"
+  },
+  "author": "Oleksandr",
+  "license": "ISC"
+}

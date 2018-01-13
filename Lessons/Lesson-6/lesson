@@ -1,0 +1,5 @@
+Streams events:
+start, data, end
+
+Streams:
+readable, writeable, or both (mutex)

@@ -2,7 +2,7 @@ const patterns = require('../constants/patterns');
 
 /**
  * @param {Object[]} arr - array of objects
- * @retunr {String} - string for csv-file
+ * @return {String} - string for csv-file
  */
 module.exports = arr => new Promise((resolve) => {
   let csvString = Object.keys(arr[0].toObject()).join(patterns.coma) + patterns.lineBreak;

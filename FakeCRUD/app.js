@@ -5,13 +5,13 @@ const bodyParser = require('body-parser');
 const port = 3300;
 const app = express();
 
-const loger = (req, res, next) => {
+const logger = (req, res, next) => {
   console.log(`${req.url} - ${req.method}`);
   next();
 };
 
 app.use(bodyParser.json());
-app.use(loger);
+app.use(logger);
 
 app.post('/orders', (req, res) => {
   if (req.body) {

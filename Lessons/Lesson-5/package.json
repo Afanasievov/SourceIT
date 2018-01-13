@@ -1,0 +1,24 @@
+{
+  "name": "lesson-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "prestart": "node prescript",
+    "start": "node app",
+    "poststart": "echo Script ended && exit 0",
+    "debug": "node app --debug",
+    "lint": "eslint ./*.js",
+    "test": "test"
+  },
+  "author": "Oleksandr",
+  "license": "ISC",
+  "dependencies": {
+    "underscore": "1.8.3"
+  },
+  "devDependencies": {
+    "eslint": "4.1.1",
+    "eslint-config-airbnb-base": "11.2.0",
+    "eslint-plugin-import": "2.6.1"
+  }
+}

@@ -3,15 +3,15 @@
 */
 
 const delay = (ms) => {
-    return new Promise((res, rej) => {
-        setTimeout(res, ms);
-    });
+  return new Promise((res, rej) => {
+    setTimeout(res, ms);
+  });
 };
 
 const readFileAsync = (path) => {
-    return new Promise((res, rej) => {
-        fs.readFile(path, (err, data) => {
-            return err ? rej(err) : res(data);
-        })
+  return new Promise((res, rej) => {
+    fs.readFile(path, (err, data) => {
+      return err ? rej(err) : res(data);
     })
+  })
 }

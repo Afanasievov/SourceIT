@@ -4,7 +4,7 @@ const http = require('http');
 const port = 3300;
 
 const logger = (req, res, next) => {
-  console.log(`Incomming request: ${req.method} - ${req.url}`);
+  console.log(`Incoming request: ${req.method} - ${req.url}`);
   next();
 };
 

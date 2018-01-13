@@ -1,0 +1,14 @@
+{
+  "name": "lesson-8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Afanasiev",
+  "license": "ISC",
+  "dependencies": {
+    "connect": "3.6.2"
+  }
+}
